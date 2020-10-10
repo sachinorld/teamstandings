@@ -62,13 +62,13 @@ public class StandingsService {
 		return TeamStandingDTO.from(s);
 	}
 
-	private TeamStanding getTeamStanding(League league, StandingRequest request) {
+	public TeamStanding getTeamStanding(League league, StandingRequest request) {
 		List<TeamStanding> standings = new ArrayList<TeamStanding>(
 				Arrays.asList(extFootballApiClient.getTeamStanding(league.getLeagueId())));
 		return standings.stream().filter(s -> s.getTeamName().equals(request.getTeamName())).findFirst().orElse(null);
 	}
 
-	private Optional<League> getLeague(Country country, StandingRequest request) {
+	public Optional<League> getLeague(Country country, StandingRequest request) {
 		List<League> leagues = new ArrayList<League>(
 				Arrays.asList(extFootballApiClient.getLeagues(country.getCountryId())));
 		return leagues.stream().filter(l -> l.getLeagueName().equals(request.getLeagueName())).findFirst();
@@ -87,7 +87,7 @@ public class StandingsService {
 
 	private boolean isValidCountry(Optional<Country> countryOpt, TeamStanding standings, StandingRequest request) {
 		if (countryOpt.isEmpty()) {
-			throw new ApplicationException("Country not found: " + request.getLeagueName());
+			throw new ApplicationException("Country not found: " + request.getCountryName());
 		}
 		if (countryOpt.get().getCountryId() == 0) {
 			standings.setCountryId(0);
@@ -96,7 +96,7 @@ public class StandingsService {
 		return true;
 	}
 
-	private Optional<Country> getCountry(StandingRequest request) {
+	public Optional<Country> getCountry(StandingRequest request) {
 		List<Country> countries = new ArrayList<Country>(Arrays.asList(extFootballApiClient.getCountries()));
 		return countries.stream().filter(c -> c.getCountryName().equals(request.getCountryName())).findFirst();
 	}

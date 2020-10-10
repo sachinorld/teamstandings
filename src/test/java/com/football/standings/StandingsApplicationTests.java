@@ -1,13 +1,13 @@
-package com.football.standings;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-class StandingsApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
-
-}
+//package com.football.standings;
+//
+//import org.junit.jupiter.api.Test;
+//import org.springframework.boot.test.context.SpringBootTest;
+//
+//@SpringBootTest
+//class StandingsApplicationTests {
+//
+//	@Test
+//	void contextLoads() {
+//	}
+//
+//}

@@ -70,8 +70,11 @@ public class TeamStandingDTO {
 		TeamStandingDTO dto = new TeamStandingDTO();
 		if (Objects.nonNull(teamStanding)) {
 			dto.setCountryId(teamStanding.getCountryId());
+			dto.setCountryName(teamStanding.getCountryName());
 			dto.setLeagueId(teamStanding.getLeagueId());
+			dto.setLeagueName(teamStanding.getLeagueName());
 			dto.setTeamId(teamStanding.getTeamId());
+			dto.setTeamName(teamStanding.getTeamName());
 			dto.setOverallLeaguePosition(teamStanding.getOverallLeaguePosition());
 		}
 		return dto;
