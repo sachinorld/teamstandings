@@ -71,16 +71,16 @@ public class StandingsServiceTest {
 
 	private Country[] getExcpectedCountries() {
 		Country c = new Country();
-		c.setCountryId(1);
-		c.setCountryName("India");
+		c.setCountryId(41);
+		c.setCountryName("England");
 		return new Country[] {c};
 	}
 	
 	private League[] getExcpectedLeagues(Country c) {
 		League l = new League();
 		l.setCountryId(c.getCountryId());
-		l.setLeagueId(10);
-		l.setLeagueName("Ranji");
+		l.setLeagueId(149);
+		l.setLeagueName("Championship");
 		return new League[] {l};
 	}
 	
@@ -88,19 +88,19 @@ public class StandingsServiceTest {
 		TeamStanding ts = new TeamStanding();
 		ts.setCountryId(c.getCountryId());
 		ts.setLeagueId(l.getLeagueId());
-		ts.setTeamId(11);
-		ts.setTeamName("Karnataka");
-		ts.setCountryName("India");
-		ts.setLeagueName("Ranji");
+		ts.setTeamId(2612);
+		ts.setTeamName("Everton");
+		ts.setCountryName("England");
+		ts.setLeagueName("Championship");
 		ts.setOverallLeaguePosition(1);
 		return new TeamStanding[] {ts};
 	}
 
 	private StandingRequest getStandingsRequestPositive() {
 		StandingRequest request = new StandingRequest();
-		request.setCountryName("India");
-		request.setLeagueName("Ranji");
-		request.setTeamName("Karnataka");
+		request.setCountryName("England");
+		request.setLeagueName("Championship");
+		request.setTeamName("Everton");
 		return request;
 	}
 }

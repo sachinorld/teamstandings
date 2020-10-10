@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
 public class BaseErrorResponse {
 
 	private HttpStatus errorCode;
@@ -23,5 +22,13 @@ public class BaseErrorResponse {
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
 	}
-	
+	public BaseErrorResponse(HttpStatus errorCode, String errorMessage) {
+		super();
+		this.errorCode = errorCode;
+		this.errorMessage = errorMessage;
+	}
+	public BaseErrorResponse() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 }
